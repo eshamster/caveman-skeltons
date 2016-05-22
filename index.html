@@ -39,11 +39,12 @@
 <p><strong><em>Note: The base skelton (in the master branch) is copied from the original skelton in caveman2.</em></strong></p>
 
 <h2>
-<a id="documentation" class="anchor" href="#documentation" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Documentation</h2>
+<a id="instalation--usage" class="anchor" href="#instalation--usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Instalation &amp; Usage</h2>
 
-<p>(Check if gravizo can be used in github.io)</p>
+<h2>
+<a id="relationship-diagram-of-branches" class="anchor" href="#relationship-diagram-of-branches" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Relationship diagram of branches</h2>
 
-<p><img src="http://g.gravizo.com/g?%0A%20%20digraph%20G%20%7B%0A%20%20%20%20aize%20=%224,4%22;%0A%20%20%20%20main%20%5Bshape=box%5D;%0A%20%20%20%20main%20-%3E%20parse%20%5Bweight=8%5D;%0A%20%20%20%20parse%20-%3E%20execute;%0A%20%20%20%20main%20-%3E%20init%20%5Bstyle=dotted%5D;%0A%20%20%20%20main%20-%3E%20cleanup;%0A%20%20%20%20execute%20-%3E%20%7B%20make_string;%20printf%7D;%0A%20%20%20%20init%20-%3E%20make_string;%0A%20%20%20%20edge%20%5Bcolor=red%5D;%0A%20%20%20%20main%20-%3E%20printf%20%5Bstyle=bold,label=%22100%20times%22%5D;%0A%20%20%20%20make_string%20%5Blabel=%22make%20a%20string%22%5D;%0A%20%20%20%20node%20%5Bshape=box,style=filled,color=%22.7%20.3%201.0%22%5D;%0A%20%20%20%20execute%20-%3E%20compare;%0A%20%20%7D" alt="Alt text"></p>
+<p><img src="http://g.gravizo.com/g?%0A%20%20digraph%20G%20%7B%0A%20%20%20%20rankdir=%22LR%22;%0A%20%20%20%20aize%20=%224,4%22;%0A%20%20%20%20master%20%5Bshape=box%5D;%0A%20%20%20%20with_cl_markup%20%5Bshape=box%5D;%0A%20%20%20%20with_parenscript%20%5Bshape=box%5D;%0A%20%20%20%20all_lisp%20%5Bshape=box%5D;%0A%20%20%20%20master%20-%3E%20with_cl_markup;%0A%20%20%20%20master%20-%3E%20with_parenscript;%0A%20%20%20%20with_cl_markup%20-%3E%20all_lisp;%0A%20%20%20%20with_parenscript%20-%3E%20all_lisp;%0A%20%20%7D" alt="Alt text"></p>
 
 <h2>
 <a id="author" class="anchor" href="#author" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Author</h2>

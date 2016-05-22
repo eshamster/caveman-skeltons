@@ -1,6 +1,6 @@
 {
   "name": "Caveman-skeltons",
   "tagline": "Skeltions for Caveman2",
-  "body": "# Caveman-Skeltons\r\n\r\nThis includes skeltons for [Caveman2](https://github.com/fukamachi/caveman).\r\n\r\n***Note: The base skelton (in the master branch) is copied from the original skelton in caveman2.***\r\n\r\n## Documentation\r\n\r\n<http://eshamster.github.io/caveman_skeltons>\r\n\r\n## Author\r\n\r\n* eshamster (hamgoostar@gmail.com)\r\n\r\n## License\r\n\r\nLicensed under the LLGPL License.\r\n",
+  "body": "# Caveman-Skeltons\r\n\r\nThis includes skeltons for [Caveman2](https://github.com/fukamachi/caveman).\r\n\r\n***Note: The base skelton (in the master branch) is copied from the original skelton in caveman2.***\r\n\r\n## Documentation\r\n\r\n(Check if gravizo can be used in github.io)\r\n\r\n![Alt text](http://g.gravizo.com/g?\r\n  digraph G {\r\n    aize =\"4,4\";\r\n    main [shape=box];\r\n    main -> parse [weight=8];\r\n    parse -> execute;\r\n    main -> init [style=dotted];\r\n    main -> cleanup;\r\n    execute -> { make_string; printf};\r\n    init -> make_string;\r\n    edge [color=red];\r\n    main -> printf [style=bold,label=\"100 times\"];\r\n    make_string [label=\"make a string\"];\r\n    node [shape=box,style=filled,color=\".7 .3 1.0\"];\r\n    execute -> compare;\r\n  }\r\n)\r\n\r\n## Author\r\n\r\n* eshamster (hamgoostar@gmail.com)\r\n\r\n## License\r\n\r\nLicensed under the LLGPL License.\r\n",
   "note": "Don't delete this file! It's used internally to help with page regeneration."
 }

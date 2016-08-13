@@ -18,6 +18,7 @@
                :cl-syntax-annot
 
                ;; HTML Template
+               :cl-markup
                :djula
 
                ;; for DB
@@ -29,6 +30,15 @@
                  (:file "web" :depends-on ("view"))
                  (:file "view" :depends-on ("config"))
                  (:file "db" :depends-on ("config"))
-                 (:file "config"))))
+                 (:file "config"))
+                :depends-on ("templates"))
+               (:module "templates"
+                :components
+                ((:file "index"))
+                :depends-on ("templates/layouts"))
+               (:module "templates/layouts"
+                :components
+                ((:file "utils")
+                 (:file "default" :depends-on ("utils")))))
   :description "<% @var description %>"
   :in-order-to ((test-op (load-op <% @var name %>-test))))

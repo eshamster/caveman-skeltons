@@ -41,7 +41,10 @@
 <h2>
 <a id="instalation--usage" class="anchor" href="#instalation--usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Instalation &amp; Usage</h2>
 
-<p>At first, checkout a branch that contains a skelton that you hope to use.</p>
+<ol>
+<li>Clone this repository to a directory that can be searched by quicklisp.</li>
+<li>Checkout a branch that contains a skelton that you hope to use.</li>
+</ol>
 
 <div class="highlight highlight-source-lisp"><pre><span class="pl-c">;; omit output</span>
 &gt; (ql:quickload :caveman-skeltons)
@@ -50,7 +53,47 @@
 <h2>
 <a id="relationship-diagram-of-branches" class="anchor" href="#relationship-diagram-of-branches" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Relationship diagram of branches</h2>
 
-<p><img src="http://g.gravizo.com/g?%0A%20%20digraph%20G%20%7B%0A%20%20%20%20rankdir=%22LR%22;%0A%20%20%20%20aize%20=%224,4%22;%0A%20%20%20%20master%20%5Bshape=box%5D;%0A%20%20%20%20with_cl_markup%20%5Bshape=box%5D;%0A%20%20%20%20with_parenscript%20%5Bshape=box%5D;%0A%20%20%20%20all_lisp%20%5Bshape=box%5D;%0A%20%20%20%20master%20-%3E%20with_cl_markup;%0A%20%20%20%20master%20-%3E%20with_parenscript;%0A%20%20%20%20with_cl_markup%20-%3E%20all_lisp;%0A%20%20%20%20with_parenscript%20-%3E%20all_lisp;%0A%20%20%7D" alt="Alt text"></p>
+<p><img src="http://g.gravizo.com/g?%0A%20%20digraph%20G%20%7B%0A%20%20%20%20rankdir=%22LR%22;%0A%20%20%20%20aize%20=%224,4%22;%0A%20%20%20%20master%20%5Bshape=box%5D;%0A%20%20%20%20with_cl_markup%20%5Bshape=box%5D;%0A%20%20%20%20with_parenscript%20%5Bshape=box%5D;%0A%20%20%20%20master%20-%3E%20with_cl_markup;%0A%20%20%20%20with_cl_markup-%3E%20with_parenscript;%0A%20%20%7D" alt="Alt text"></p>
+
+<h2>
+<a id="about-each-branch" class="anchor" href="#about-each-branch" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>About each branch</h2>
+
+<h3>
+<a id="with_cl_markup" class="anchor" href="#with_cl_markup" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>with_cl_markup</h3>
+
+<p>This adopts <a href="https://github.com/arielnetworks/cl-markup">CL-Markup</a> as a default template engine instead of <a href="https://mmontone.github.io/djula/">Djula</a></p>
+
+<p>If you want to add a new template...</p>
+
+<ol>
+<li>Add a file name (= a template name) to <code>&lt;your project name&gt;.asd</code> under the "template" module.</li>
+<li>Add a lisp file as <code>templates/&lt;template name&gt;.lisp</code>, then...
+
+<ol>
+<li>Make a package as the name <code>&lt;your project name&gt;.templates.&lt;template name&gt;</code>.</li>
+<li>Make a function <code>render</code> that returns a HTML code as a string.
+
+<ul>
+<li>We suppose that you use CL-Markup to make the return value.</li>
+<li>Arguments of it is arbitrary.</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>Use the template in <code>src/web.lisp</code> using the <code>&lt;your project name&gt;.view:render</code> function
+
+<ul>
+<li><code>(render :&lt;template name&gt; &lt;aruguments if needed&gt;)</code></li>
+</ul>
+</li>
+</ol>
+
+<p>If you want to see an example, please see the <code>templates/index.lisp</code></p>
+
+<h3>
+<a id="with_parenscript" class="anchor" href="#with_parenscript" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>with_parenscript</h3>
+
+<p>[WIP]</p>
 
 <h2>
 <a id="author" class="anchor" href="#author" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Author</h2>

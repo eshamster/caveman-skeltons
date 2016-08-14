@@ -66,7 +66,7 @@
 <p>If you want to add a new template...</p>
 
 <ol>
-<li>Add a file name (= a template name) to <code>&lt;your project name&gt;.asd</code> under the "template" module.</li>
+<li>Add a file name (= a template name) to <code>&lt;your project name&gt;.asd</code> under the "templates" module.</li>
 <li>Add a lisp file as <code>templates/&lt;template name&gt;.lisp</code>, then...
 
 <ol>
@@ -93,7 +93,38 @@
 <h3>
 <a id="with_parenscript" class="anchor" href="#with_parenscript" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>with_parenscript</h3>
 
-<p>[WIP]</p>
+<p><strong><em>This is created from the <code>with_cl_markup</code> branch.</em></strong></p>
+
+<p>This adopts <a href="https://common-lisp.net/project/parenscript/">Parenscript</a> to generate JavaScript codes.</p>
+
+<p>If you want to add a new file...</p>
+
+<ol>
+<li>Add a file name (with no suffix) to <code>&lt;your project name&gt;.asd</code> under the "static/js" module.</li>
+<li>Add a lisp file as <code>static/js/&lt;name&gt;.lisp</code>, then...
+
+<ol>
+<li>Make a package as the name <code>&lt;your project name&gt;.static.js.&lt;name&gt;</code>.</li>
+<li>Make a function <code>js-main</code> that returns a JavaScript code as a string.
+
+<ul>
+<li>We suppose that you use Parenscript to generate it.</li>
+<li>This is a function that has no argument.</li>
+</ul>
+</li>
+</ol>
+</li>
+<li>Use this in templates using the <code>&lt;your project name&gt;.static.js.utils:load-js</code> function
+
+<ul>
+<li><code>(load-js :&lt;name&gt;)</code></li>
+<li>This function generates a JavaScript file as <code>static/js/_&lt;name&gt;.js</code>
+</li>
+</ul>
+</li>
+</ol>
+
+<p>If you want to see an example, please see the <code>static/js/index.lisp</code> and <code>templates/index.lisp</code></p>
 
 <h2>
 <a id="author" class="anchor" href="#author" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Author</h2>

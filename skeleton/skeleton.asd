@@ -23,7 +23,10 @@
 
                ;; for DB
                :datafly
-               :sxql)
+               :sxql
+
+               ;; for JavaScript
+               :parenscript)
   :components ((:module "src"
                 :components
                 ((:file "main" :depends-on ("config" "view" "db"))
@@ -32,10 +35,14 @@
                  (:file "db" :depends-on ("config"))
                  (:file "config"))
                 :depends-on ("templates"))
+               (:module "static/js"
+                :components
+                ((:file "utils")
+                 (:file "index" :depends-on ("utils"))))
                (:module "templates"
                 :components
                 ((:file "index"))
-                :depends-on ("templates/layouts"))
+                :depends-on ("templates/layouts" "static/js"))
                (:module "templates/layouts"
                 :components
                 ((:file "utils")
